@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 def find_item_by_name_in_collection(name, collection)
  collection.each do |hash_item| 
@@ -16,6 +17,19 @@ def find_item_by_name_in_collection(name, collection)
 #   end
 #   i+=1
 # end
+=======
+require 'pry'
+def find_item_by_name_in_collection(name, collection)
+  # Implement me first!
+  #
+  # Consult README for inputs and outputs
+  i = 0
+  while i < collection.length do
+    return collection[i] if name === collection[i][:item]
+    i += 1
+  end
+  nil
+>>>>>>> 5a70ae02d8fd0ab9e0d78d5de0a45c81ab27be7f
 end
 
 
@@ -24,6 +38,7 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
+<<<<<<< HEAD
   newcart = []
   cart.map do |hash_item|
     if !find_item_by_name_in_collection(hash_item[:item],newcart)
@@ -64,6 +79,26 @@ end
 #   i+=1
 #  end
 # end
+=======
+  i = 0
+  result = []
+
+  while i < cart.count do
+    item_name = cart[i][:item]
+    sought_item = find_item_by_name_in_collection(item_name, result)
+    if sought_item
+      sought_item[:count] += 1
+    else
+      cart[i][:count] = 1
+      result << cart[i]
+    end
+    i += 1
+  end
+  result
+end
+
+
+>>>>>>> 5a70ae02d8fd0ab9e0d78d5de0a45c81ab27be7f
 def apply_coupons(cart, coupons)
   i = 0
   while i < coupons.length do 
@@ -97,8 +132,8 @@ def apply_coupons(cart, coupons)
   end
   cart
 end
-
 def apply_clearance(cart)
+<<<<<<< HEAD
   index=0
   while index<cart.size 
     if cart[index][:clearance]
@@ -108,8 +143,12 @@ def apply_clearance(cart)
     index+=1
   end 
   cart
+=======
+  # Consult README for inputs and outputs
+  #
+  # 
+>>>>>>> 5a70ae02d8fd0ab9e0d78d5de0a45c81ab27be7f
 end
-
 def checkout(cart, coupons)
   # Consult README for inputs and outputs
   #
@@ -138,3 +177,11 @@ def checkout(cart, coupons)
 end
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 5a70ae02d8fd0ab9e0d78d5de0a45c81ab27be7f
